@@ -23,6 +23,11 @@ module.exports = {
           isEmail: true,
         },
       },
+      companyId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'user', key: 'id' }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

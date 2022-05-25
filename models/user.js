@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsTo(models.Company, {foreignKey: 'companyId', as: 'company'})
+      //User.belongsTo(models.Company, {foreignKey: 'companyId', as: 'company'})
     }
   }
   User.init({
@@ -19,8 +19,20 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING,
     email: DataTypes.STRING
   }, {
+  //   hooks : {
+  //     afterBulkCreate : (record, options) => {
+  //         record.dataValues.firstName =  record.dataValues.firstName.toUpperCase();
+  //        // record.dataValues.updatedAt = new Date().toISOString().replace(/T/, ' ').replace(/\..+/g, '');
+  //     },
+     
+  // }
+
+
+  },{
     sequelize,
     modelName: 'User',
   });
+
+ 
   return User;
 };
